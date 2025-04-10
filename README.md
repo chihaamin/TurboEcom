@@ -1,13 +1,13 @@
-# Turborepo Tailwind CSS & Shadcn ui starter
+# Turborepo Tailwind CSS & Shadcn UI for Ecommerce CMS
 
-This Turborepo starter is maintained by the Turborepo core team.
+This Turborepo is designed to serve as the foundation for an eCommerce CMS project. It includes separate applications for the **Admin Dashboard** and the **Client Web** interface, built with modern tools and technologies.
 
 ## Using this example
 
-Run the following command:
+Run the following command to initialize the project:
 
 ```sh
-npx create-turbo@latest -e with-tailwind
+npx create-turbo@latest -e "this repo link"
 ```
 
 ## What's inside?
@@ -16,24 +16,24 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `admin`: A [Next.js](https://nextjs.org/) app for the **Admin Dashboard**, styled with [Tailwind CSS](https://tailwindcss.com/) and utilizing [Shadcn UI](https://ui.shadcn.dev/).
+- `client`: A [Next.js](https://nextjs.org/) app for the **Client Web** interface, styled with [Tailwind CSS](https://tailwindcss.com/) and utilizing [Shadcn UI](https://ui.shadcn.dev/).
+- `ui`: A shared React component library with [Tailwind CSS](https://tailwindcss.com/) used by both `admin` and `client` applications.
+- `@repo/eslint-config`: Shared `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`).
+- `@repo/typescript-config`: Shared `tsconfig.json` configurations used throughout the monorepo.
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
 ### Building packages/ui
 
-This example is set up to produce compiled styles for `ui` components into the `dist` directory. The component `.tsx` files are consumed by the Next.js apps directly using `transpilePackages` in `next.config.ts`. This was chosen for several reasons:
+The `ui` package is set up to produce compiled styles for shared components into the `dist` directory. The `.tsx` files are consumed directly by the Next.js apps using `transpilePackages` in `next.config.ts`. This approach ensures:
 
-- Make sharing one `tailwind.config.ts` to apps and packages as easy as possible.
-- Make package compilation simple by only depending on the Next.js Compiler and `tailwindcss`.
-- Ensure Tailwind classes do not overwrite each other. The `ui` package uses a `ui-` prefix for it's classes.
-- Maintain clear package export boundaries.
+- Easy sharing of a single `tailwind.config.ts` across apps and packages.
+- Simplified package compilation using the Next.js Compiler and `tailwindcss`.
+- Avoidance of Tailwind class conflicts by using a `ui-` prefix for `ui` package classes.
+- Clear package export boundaries.
 
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update the `tailwind.config.ts` in your apps to be aware of your package locations, so it can find all usages of the `tailwindcss` class names for CSS compilation.
+Alternatively, you can consume `packages/ui` directly from the source without building. If you choose this option, update the `tailwind.config.ts` in your apps to include the package locations for CSS class scanning.
 
 For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts):
 
@@ -46,13 +46,20 @@ For example, in [tailwind.config.ts](packages/tailwind-config/tailwind.config.ts
   ],
 ```
 
-If you choose this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
+If using this strategy, you can remove the `tailwindcss` and `autoprefixer` dependencies from the `ui` package.
 
-### Utilities
+## Utilities
 
-This Turborepo has some additional tools already setup for you:
+This Turborepo includes the following tools:
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
+- [Tailwind CSS](https://tailwindcss.com/) for styling
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
+
+## Project Structure
+
+- **Admin Dashboard**: Manage products, orders, users, and other CMS functionalities.
+- **Client Web**: The storefront for customers to browse and purchase products.
+
+This structure ensures a clean separation of concerns and scalability for your eCommerce CMS.
