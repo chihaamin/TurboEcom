@@ -20,5 +20,9 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "next-themes": "^0.4.6",
+    "zod": "^3.24.2"
+  }
 }

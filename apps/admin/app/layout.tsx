@@ -1,5 +1,8 @@
+
 import "./globals.css";
 import "@repo/ui/globals.css";
+import { ThemeProvider } from "@repo/ui/components/theme-provider";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
@@ -11,13 +14,24 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+  auth,
+  dashboard,
   children,
 }: {
+  auth: React.ReactNode;
+  dashboard: React.ReactNode;
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning >
+      <body className={`${inter.className}`}>
+        <ThemeProvider
+          attribute="class" enableSystem disableTransitionOnChange>
+          {/* {auth} */}
+          {dashboard}
+          {/* {children} */}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
