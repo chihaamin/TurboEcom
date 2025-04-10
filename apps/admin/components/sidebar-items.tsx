@@ -1,5 +1,4 @@
 import {
-  LayoutDashboard,
   Package,
   Users,
   Tag,
@@ -31,7 +30,7 @@ const sidebarItems = [
     SubMenu: [
       { name: "Order List", icon: <ListOrdered className={sidebarIconsProps} /> },
       { name: "Order Tracking", icon: <PackageSearch className={sidebarIconsProps} /> },
-      { name: "Returns/Refunds", icon: <Undo2 className={sidebarIconsProps} /> }
+      { name: "Returns", icon: <Undo2 className={sidebarIconsProps} /> }
     ]
   },
   {
@@ -53,7 +52,7 @@ const sidebarItems = [
   {
     Menu: "Marketing",
     SubMenu: [
-      { name: "Discounts/Coupons", icon: <TicketPercent className={sidebarIconsProps} /> },
+      { name: "Coupons", icon: <TicketPercent className={sidebarIconsProps} /> },
       { name: "Promotions", icon: <Megaphone className={sidebarIconsProps} /> },
       { name: "Email Campaigns", icon: <Mail className={sidebarIconsProps} /> }
     ]
@@ -77,9 +76,9 @@ const sidebarItems = [
   {
     Menu: "Settings",
     SubMenu: [
-      { name: "General Settings", icon: <Settings className={sidebarIconsProps} /> },
-      { name: "Payment Methods", icon: <Wallet className={sidebarIconsProps} /> },
-      { name: "Shipping Settings", icon: <Truck className={sidebarIconsProps} /> },
+      { name: "General", icon: <Settings className={sidebarIconsProps} /> },
+      { name: "Payments", icon: <Wallet className={sidebarIconsProps} /> },
+      { name: "Shipping", icon: <Truck className={sidebarIconsProps} /> },
       { name: "Staff Permissions", icon: <Shield className={sidebarIconsProps} /> }
     ]
   }
